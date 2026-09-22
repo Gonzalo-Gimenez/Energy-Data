@@ -1,0 +1,74 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: es-AR
+	discourageImplicitMeasures: true
+
+annotation PBI_QueryOrder = ["fuel_prices"]
+
+table fuel_prices
+	lineageTag: fuel-prices-table
+
+	column fecha
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: col-fecha
+		summarizeBy: none
+		sourceColumn: fecha
+
+	column producto
+		dataType: string
+		lineageTag: col-producto
+		summarizeBy: none
+		sourceColumn: producto
+
+	column provincia
+		dataType: string
+		lineageTag: col-provincia
+		summarizeBy: none
+		sourceColumn: provincia
+
+	column precio_ars_litro
+		dataType: double
+		formatString: "#,0.0"
+		lineageTag: col-precio
+		summarizeBy: sum
+		sourceColumn: precio_ars_litro
+
+	measure Precio_promedio = AVERAGE(fuel_prices[precio_ars_litro])
+		formatString: "#,0.0"
+		lineageTag: measure-avg-price
+
+	measure Spread_max_min = MAX(fuel_prices[precio_ars_litro]) - MIN(fuel_prices[precio_ars_litro])
+		formatString: "#,0.0"
+		lineageTag: measure-spread
+
+	measure Ultimo_mes =
+			CALCULATE(
+			    AVERAGE(fuel_prices[precio_ars_litro]),
+			    fuel_prices[fecha] >= EOMONTH(MAX(fuel_prices[fecha]), -1) + 1,
+			    fuel_prices[fecha] <= MAX(fuel_prices[fecha])
+			)
+		formatString: "#,0.0"
+		lineageTag: measure-last-month
+
+	partition fuel_prices = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(
+				        File.Contents("../../../data/fuel_prices_public_sample.csv"),
+				        [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.None]
+				    ),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    #"Changed Type" = Table.TransformColumnTypes(
+				        #"Promoted Headers",
+				        {
+				            {"fecha", type date},
+				            {"producto", type text},
+				            {"provincia", type text},
+				            {"precio_ars_litro", type number}
+				        }
+				    )
+				in
+				    #"Changed Type"

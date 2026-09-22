@@ -1,31 +1,505 @@
 fecha,producto,provincia,precio_ars_litro
-2024-01-15,Nafta Super,Buenos Aires,892.5
-2024-01-15,Nafta Super,Córdoba,905.0
-2024-01-15,Nafta Super,Mendoza,918.2
-2024-01-15,Gasoil Grado 2,Buenos Aires,845.0
-2024-01-15,Gasoil Grado 2,Santa Fe,851.3
-2024-02-15,Nafta Super,Buenos Aires,901.0
-2024-02-15,Nafta Super,Córdoba,912.5
-2024-02-15,Nafta Super,Mendoza,925.0
-2024-02-15,Gasoil Grado 2,Buenos Aires,852.0
-2024-02-15,Gasoil Grado 2,Santa Fe,858.0
-2024-03-15,Nafta Super,Buenos Aires,908.5
-2024-03-15,Nafta Super,Córdoba,920.0
-2024-03-15,Nafta Super,Mendoza,932.5
-2024-03-15,Gasoil Grado 2,Buenos Aires,860.0
-2024-03-15,Gasoil Grado 2,Santa Fe,865.5
-2024-06-15,Nafta Super,Buenos Aires,925.0
-2024-06-15,Nafta Super,Córdoba,938.0
-2024-06-15,Nafta Super,Mendoza,948.5
-2024-06-15,Gasoil Grado 2,Buenos Aires,878.0
-2024-06-15,Gasoil Grado 2,Santa Fe,884.0
-2024-09-15,Nafta Super,Buenos Aires,940.0
-2024-09-15,Nafta Super,Córdoba,952.0
-2024-09-15,Nafta Super,Mendoza,961.0
-2024-09-15,Gasoil Grado 2,Buenos Aires,892.0
-2024-09-15,Gasoil Grado 2,Santa Fe,898.5
-2024-12-15,Nafta Super,Buenos Aires,955.0
-2024-12-15,Nafta Super,Córdoba,968.0
-2024-12-15,Nafta Super,Mendoza,975.5
-2024-12-15,Gasoil Grado 2,Buenos Aires,905.0
-2024-12-15,Gasoil Grado 2,Santa Fe,911.0
+2024-01-15,Nafta Super,Buenos Aires,892.8
+2024-01-15,Nafta Super,Córdoba,904.5
+2024-01-15,Nafta Super,Mendoza,914.5
+2024-01-15,Nafta Super,Santa Fe,900.5
+2024-01-15,Nafta Super,Neuquén,909.4
+2024-01-15,Nafta Super,Chubut,917.1
+2024-01-15,Nafta Super,Tucumán,905.4
+2024-01-15,Nafta Super,Salta,909.3
+2024-01-15,Gasoil Grado 2,Buenos Aires,842.4
+2024-01-15,Gasoil Grado 2,Córdoba,856.1
+2024-01-15,Gasoil Grado 2,Mendoza,865.8
+2024-01-15,Gasoil Grado 2,Santa Fe,847.5
+2024-01-15,Gasoil Grado 2,Neuquén,860.7
+2024-01-15,Gasoil Grado 2,Chubut,864.2
+2024-01-15,Gasoil Grado 2,Tucumán,859.8
+2024-01-15,Gasoil Grado 2,Salta,861.0
+2024-01-15,Nafta Premium,Buenos Aires,946.4
+2024-01-15,Nafta Premium,Córdoba,958.0
+2024-01-15,Nafta Premium,Mendoza,968.0
+2024-01-15,Nafta Premium,Santa Fe,955.5
+2024-01-15,Nafta Premium,Neuquén,963.0
+2024-01-15,Nafta Premium,Chubut,970.7
+2024-01-15,Nafta Premium,Tucumán,962.1
+2024-01-15,Nafta Premium,Salta,962.9
+2024-02-15,Nafta Super,Buenos Aires,896.0
+2024-02-15,Nafta Super,Córdoba,907.6
+2024-02-15,Nafta Super,Mendoza,916.2
+2024-02-15,Nafta Super,Santa Fe,903.6
+2024-02-15,Nafta Super,Neuquén,912.6
+2024-02-15,Nafta Super,Chubut,922.0
+2024-02-15,Nafta Super,Tucumán,909.9
+2024-02-15,Nafta Super,Salta,914.2
+2024-02-15,Gasoil Grado 2,Buenos Aires,847.2
+2024-02-15,Gasoil Grado 2,Córdoba,859.2
+2024-02-15,Gasoil Grado 2,Mendoza,868.9
+2024-02-15,Gasoil Grado 2,Santa Fe,852.5
+2024-02-15,Gasoil Grado 2,Neuquén,863.9
+2024-02-15,Gasoil Grado 2,Chubut,869.1
+2024-02-15,Gasoil Grado 2,Tucumán,863.3
+2024-02-15,Gasoil Grado 2,Salta,864.1
+2024-02-15,Nafta Premium,Buenos Aires,949.6
+2024-02-15,Nafta Premium,Córdoba,961.2
+2024-02-15,Nafta Premium,Mendoza,973.0
+2024-02-15,Nafta Premium,Santa Fe,954.4
+2024-02-15,Nafta Premium,Neuquén,966.2
+2024-02-15,Nafta Premium,Chubut,975.6
+2024-02-15,Nafta Premium,Tucumán,965.2
+2024-02-15,Nafta Premium,Salta,966.4
+2024-03-15,Nafta Super,Buenos Aires,900.9
+2024-03-15,Nafta Super,Córdoba,912.9
+2024-03-15,Nafta Super,Mendoza,919.7
+2024-03-15,Nafta Super,Santa Fe,905.7
+2024-03-15,Nafta Super,Neuquén,917.4
+2024-03-15,Nafta Super,Chubut,925.5
+2024-03-15,Nafta Super,Tucumán,915.1
+2024-03-15,Nafta Super,Salta,917.7
+2024-03-15,Gasoil Grado 2,Buenos Aires,852.5
+2024-03-15,Gasoil Grado 2,Córdoba,864.1
+2024-03-15,Gasoil Grado 2,Mendoza,874.1
+2024-03-15,Gasoil Grado 2,Santa Fe,855.9
+2024-03-15,Gasoil Grado 2,Neuquén,869.1
+2024-03-15,Gasoil Grado 2,Chubut,872.6
+2024-03-15,Gasoil Grado 2,Tucumán,868.2
+2024-03-15,Gasoil Grado 2,Salta,869.4
+2024-03-15,Nafta Premium,Buenos Aires,954.4
+2024-03-15,Nafta Premium,Córdoba,966.4
+2024-03-15,Nafta Premium,Mendoza,976.1
+2024-03-15,Nafta Premium,Santa Fe,960.7
+2024-03-15,Nafta Premium,Neuquén,971.0
+2024-03-15,Nafta Premium,Chubut,979.1
+2024-03-15,Nafta Premium,Tucumán,970.1
+2024-03-15,Nafta Premium,Salta,971.3
+2024-04-15,Nafta Super,Buenos Aires,903.0
+2024-04-15,Nafta Super,Córdoba,914.6
+2024-04-15,Nafta Super,Mendoza,926.4
+2024-04-15,Nafta Super,Santa Fe,912.4
+2024-04-15,Nafta Super,Neuquén,921.3
+2024-04-15,Nafta Super,Chubut,929.0
+2024-04-15,Nafta Super,Tucumán,917.2
+2024-04-15,Nafta Super,Salta,921.6
+2024-04-15,Gasoil Grado 2,Buenos Aires,862.6
+2024-04-15,Gasoil Grado 2,Córdoba,874.2
+2024-04-15,Gasoil Grado 2,Mendoza,885.6
+2024-04-15,Gasoil Grado 2,Santa Fe,873.4
+2024-04-15,Gasoil Grado 2,Neuquén,880.6
+2024-04-15,Gasoil Grado 2,Chubut,890.1
+2024-04-15,Gasoil Grado 2,Tucumán,876.9
+2024-04-15,Gasoil Grado 2,Salta,880.9
+2024-04-15,Nafta Premium,Buenos Aires,956.6
+2024-04-15,Nafta Premium,Córdoba,968.6
+2024-04-15,Nafta Premium,Mendoza,980.0
+2024-04-15,Nafta Premium,Santa Fe,967.7
+2024-04-15,Nafta Premium,Neuquén,974.9
+2024-04-15,Nafta Premium,Chubut,982.6
+2024-04-15,Nafta Premium,Tucumán,974.0
+2024-04-15,Nafta Premium,Salta,975.1
+2024-05-15,Nafta Super,Buenos Aires,907.8
+2024-05-15,Nafta Super,Córdoba,919.5
+2024-05-15,Nafta Super,Mendoza,930.9
+2024-05-15,Nafta Super,Santa Fe,917.2
+2024-05-15,Nafta Super,Neuquén,925.8
+2024-05-15,Nafta Super,Chubut,933.9
+2024-05-15,Nafta Super,Tucumán,921.8
+2024-05-15,Nafta Super,Salta,926.1
+2024-05-15,Gasoil Grado 2,Buenos Aires,867.1
+2024-05-15,Gasoil Grado 2,Córdoba,879.1
+2024-05-15,Gasoil Grado 2,Mendoza,890.5
+2024-05-15,Gasoil Grado 2,Santa Fe,872.3
+2024-05-15,Gasoil Grado 2,Neuquén,885.5
+2024-05-15,Gasoil Grado 2,Chubut,889.0
+2024-05-15,Gasoil Grado 2,Tucumán,880.0
+2024-05-15,Gasoil Grado 2,Salta,885.8
+2024-05-15,Nafta Premium,Buenos Aires,961.4
+2024-05-15,Nafta Premium,Córdoba,973.1
+2024-05-15,Nafta Premium,Mendoza,984.5
+2024-05-15,Nafta Premium,Santa Fe,972.2
+2024-05-15,Nafta Premium,Neuquén,979.4
+2024-05-15,Nafta Premium,Chubut,987.5
+2024-05-15,Nafta Premium,Tucumán,977.1
+2024-05-15,Nafta Premium,Salta,979.7
+2024-06-15,Nafta Super,Buenos Aires,910.6
+2024-06-15,Nafta Super,Córdoba,922.6
+2024-06-15,Nafta Super,Mendoza,934.0
+2024-06-15,Nafta Super,Santa Fe,920.0
+2024-06-15,Nafta Super,Neuquén,929.0
+2024-06-15,Nafta Super,Chubut,937.0
+2024-06-15,Nafta Super,Tucumán,928.1
+2024-06-15,Nafta Super,Salta,929.2
+2024-06-15,Gasoil Grado 2,Buenos Aires,873.1
+2024-06-15,Gasoil Grado 2,Córdoba,882.0
+2024-06-15,Gasoil Grado 2,Mendoza,893.7
+2024-06-15,Gasoil Grado 2,Santa Fe,881.1
+2024-06-15,Gasoil Grado 2,Neuquén,891.5
+2024-06-15,Gasoil Grado 2,Chubut,895.0
+2024-06-15,Gasoil Grado 2,Tucumán,883.2
+2024-06-15,Gasoil Grado 2,Salta,891.7
+2024-06-15,Nafta Premium,Buenos Aires,964.2
+2024-06-15,Nafta Premium,Córdoba,976.2
+2024-06-15,Nafta Premium,Mendoza,987.6
+2024-06-15,Nafta Premium,Santa Fe,975.4
+2024-06-15,Nafta Premium,Neuquén,982.6
+2024-06-15,Nafta Premium,Chubut,990.6
+2024-06-15,Nafta Premium,Tucumán,983.1
+2024-06-15,Nafta Premium,Salta,988.8
+2024-07-15,Nafta Super,Buenos Aires,913.5
+2024-07-15,Nafta Super,Córdoba,926.9
+2024-07-15,Nafta Super,Mendoza,936.9
+2024-07-15,Nafta Super,Santa Fe,922.9
+2024-07-15,Nafta Super,Neuquén,931.8
+2024-07-15,Nafta Super,Chubut,939.9
+2024-07-15,Nafta Super,Tucumán,927.8
+2024-07-15,Nafta Super,Salta,938.0
+2024-07-15,Gasoil Grado 2,Buenos Aires,873.1
+2024-07-15,Gasoil Grado 2,Córdoba,884.8
+2024-07-15,Gasoil Grado 2,Mendoza,896.5
+2024-07-15,Gasoil Grado 2,Santa Fe,883.9
+2024-07-15,Gasoil Grado 2,Neuquén,891.5
+2024-07-15,Gasoil Grado 2,Chubut,900.6
+2024-07-15,Gasoil Grado 2,Tucumán,890.6
+2024-07-15,Gasoil Grado 2,Salta,897.3
+2024-07-15,Nafta Premium,Buenos Aires,973.0
+2024-07-15,Nafta Premium,Córdoba,985.0
+2024-07-15,Nafta Premium,Mendoza,990.5
+2024-07-15,Nafta Premium,Santa Fe,978.2
+2024-07-15,Nafta Premium,Neuquén,985.4
+2024-07-15,Nafta Premium,Chubut,993.5
+2024-07-15,Nafta Premium,Tucumán,984.5
+2024-07-15,Nafta Premium,Salta,991.6
+2024-08-15,Nafta Super,Buenos Aires,916.6
+2024-08-15,Nafta Super,Córdoba,934.2
+2024-08-15,Nafta Super,Mendoza,940.0
+2024-08-15,Nafta Super,Santa Fe,926.0
+2024-08-15,Nafta Super,Neuquén,934.9
+2024-08-15,Nafta Super,Chubut,942.6
+2024-08-15,Nafta Super,Tucumán,933.7
+2024-08-15,Nafta Super,Salta,940.8
+2024-08-15,Gasoil Grado 2,Buenos Aires,873.9
+2024-08-15,Gasoil Grado 2,Córdoba,885.9
+2024-08-15,Gasoil Grado 2,Mendoza,891.3
+2024-08-15,Gasoil Grado 2,Santa Fe,879.0
+2024-08-15,Gasoil Grado 2,Neuquén,892.2
+2024-08-15,Gasoil Grado 2,Chubut,895.7
+2024-08-15,Gasoil Grado 2,Tucumán,886.8
+2024-08-15,Gasoil Grado 2,Salta,892.4
+2024-08-15,Nafta Premium,Buenos Aires,976.1
+2024-08-15,Nafta Premium,Córdoba,987.8
+2024-08-15,Nafta Premium,Mendoza,993.6
+2024-08-15,Nafta Premium,Santa Fe,981.0
+2024-08-15,Nafta Premium,Neuquén,994.5
+2024-08-15,Nafta Premium,Chubut,1002.2
+2024-08-15,Nafta Premium,Tucumán,990.4
+2024-08-15,Nafta Premium,Salta,994.4
+2024-09-15,Nafta Super,Buenos Aires,924.0
+2024-09-15,Nafta Super,Córdoba,936.0
+2024-09-15,Nafta Super,Mendoza,945.6
+2024-09-15,Nafta Super,Santa Fe,932.0
+2024-09-15,Nafta Super,Neuquén,940.6
+2024-09-15,Nafta Super,Chubut,950.4
+2024-09-15,Nafta Super,Tucumán,941.4
+2024-09-15,Nafta Super,Salta,940.8
+2024-09-15,Gasoil Grado 2,Buenos Aires,872.8
+2024-09-15,Gasoil Grado 2,Córdoba,890.4
+2024-09-15,Gasoil Grado 2,Mendoza,897.2
+2024-09-15,Gasoil Grado 2,Santa Fe,886.4
+2024-09-15,Gasoil Grado 2,Neuquén,895.4
+2024-09-15,Gasoil Grado 2,Chubut,900.2
+2024-09-15,Gasoil Grado 2,Tucumán,888.5
+2024-09-15,Gasoil Grado 2,Salta,895.2
+2024-09-15,Nafta Premium,Buenos Aires,977.6
+2024-09-15,Nafta Premium,Córdoba,989.6
+2024-09-15,Nafta Premium,Mendoza,999.2
+2024-09-15,Nafta Premium,Santa Fe,988.7
+2024-09-15,Nafta Premium,Neuquén,994.1
+2024-09-15,Nafta Premium,Chubut,1002.2
+2024-09-15,Nafta Premium,Tucumán,996.4
+2024-09-15,Nafta Premium,Salta,1000.4
+2024-10-15,Nafta Super,Buenos Aires,925.7
+2024-10-15,Nafta Super,Córdoba,937.7
+2024-10-15,Nafta Super,Mendoza,949.1
+2024-10-15,Nafta Super,Santa Fe,933.3
+2024-10-15,Nafta Super,Neuquén,948.2
+2024-10-15,Nafta Super,Chubut,951.8
+2024-10-15,Nafta Super,Tucumán,942.8
+2024-10-15,Nafta Super,Salta,948.5
+2024-10-15,Gasoil Grado 2,Buenos Aires,880.1
+2024-10-15,Gasoil Grado 2,Córdoba,892.1
+2024-10-15,Gasoil Grado 2,Mendoza,899.0
+2024-10-15,Gasoil Grado 2,Santa Fe,888.1
+2024-10-15,Gasoil Grado 2,Neuquén,896.8
+2024-10-15,Gasoil Grado 2,Chubut,902.0
+2024-10-15,Gasoil Grado 2,Tucumán,896.2
+2024-10-15,Gasoil Grado 2,Salta,897.0
+2024-10-15,Nafta Premium,Buenos Aires,982.4
+2024-10-15,Nafta Premium,Córdoba,997.2
+2024-10-15,Nafta Premium,Mendoza,1006.9
+2024-10-15,Nafta Premium,Santa Fe,990.4
+2024-10-15,Nafta Premium,Neuquén,999.0
+2024-10-15,Nafta Premium,Chubut,1008.5
+2024-10-15,Nafta Premium,Tucumán,998.1
+2024-10-15,Nafta Premium,Salta,1005.2
+2024-11-15,Nafta Super,Buenos Aires,932.4
+2024-11-15,Nafta Super,Córdoba,944.0
+2024-11-15,Nafta Super,Mendoza,955.4
+2024-11-15,Nafta Super,Santa Fe,941.8
+2024-11-15,Nafta Super,Neuquén,950.4
+2024-11-15,Nafta Super,Chubut,958.4
+2024-11-15,Nafta Super,Tucumán,949.5
+2024-11-15,Nafta Super,Salta,950.6
+2024-11-15,Gasoil Grado 2,Buenos Aires,886.8
+2024-11-15,Gasoil Grado 2,Córdoba,895.6
+2024-11-15,Gasoil Grado 2,Mendoza,907.0
+2024-11-15,Gasoil Grado 2,Santa Fe,894.8
+2024-11-15,Gasoil Grado 2,Neuquén,899.2
+2024-11-15,Gasoil Grado 2,Chubut,908.6
+2024-11-15,Gasoil Grado 2,Tucumán,896.5
+2024-11-15,Gasoil Grado 2,Salta,905.4
+2024-11-15,Nafta Premium,Buenos Aires,986.0
+2024-11-15,Nafta Premium,Córdoba,997.6
+2024-11-15,Nafta Premium,Mendoza,1009.4
+2024-11-15,Nafta Premium,Santa Fe,996.8
+2024-11-15,Nafta Premium,Neuquén,1004.3
+2024-11-15,Nafta Premium,Chubut,1012.0
+2024-11-15,Nafta Premium,Tucumán,1004.8
+2024-11-15,Nafta Premium,Salta,1004.2
+2024-12-15,Nafta Super,Buenos Aires,934.1
+2024-12-15,Nafta Super,Córdoba,945.8
+2024-12-15,Nafta Super,Mendoza,958.6
+2024-12-15,Nafta Super,Santa Fe,944.6
+2024-12-15,Nafta Super,Neuquén,956.7
+2024-12-15,Nafta Super,Chubut,958.4
+2024-12-15,Nafta Super,Tucumán,952.2
+2024-12-15,Nafta Super,Salta,956.6
+2024-12-15,Gasoil Grado 2,Buenos Aires,889.6
+2024-12-15,Gasoil Grado 2,Córdoba,897.4
+2024-12-15,Gasoil Grado 2,Mendoza,913.0
+2024-12-15,Gasoil Grado 2,Santa Fe,894.8
+2024-12-15,Gasoil Grado 2,Neuquén,908.0
+2024-12-15,Gasoil Grado 2,Chubut,911.5
+2024-12-15,Gasoil Grado 2,Tucumán,901.1
+2024-12-15,Gasoil Grado 2,Salta,908.2
+2024-12-15,Nafta Premium,Buenos Aires,991.9
+2024-12-15,Nafta Premium,Córdoba,1005.3
+2024-12-15,Nafta Premium,Mendoza,1015.3
+2024-12-15,Nafta Premium,Santa Fe,999.9
+2024-12-15,Nafta Premium,Neuquén,1010.2
+2024-12-15,Nafta Premium,Chubut,1018.0
+2024-12-15,Nafta Premium,Tucumán,1003.4
+2024-12-15,Nafta Premium,Salta,1010.2
+2025-01-15,Nafta Super,Buenos Aires,938.6
+2025-01-15,Nafta Super,Córdoba,950.6
+2025-01-15,Nafta Super,Mendoza,960.3
+2025-01-15,Nafta Super,Santa Fe,946.6
+2025-01-15,Nafta Super,Neuquén,961.2
+2025-01-15,Nafta Super,Chubut,963.3
+2025-01-15,Nafta Super,Tucumán,956.1
+2025-01-15,Nafta Super,Salta,961.4
+2025-01-15,Gasoil Grado 2,Buenos Aires,893.4
+2025-01-15,Gasoil Grado 2,Córdoba,905.1
+2025-01-15,Gasoil Grado 2,Mendoza,911.9
+2025-01-15,Gasoil Grado 2,Santa Fe,899.7
+2025-01-15,Gasoil Grado 2,Neuquén,910.0
+2025-01-15,Gasoil Grado 2,Chubut,919.1
+2025-01-15,Gasoil Grado 2,Tucumán,909.1
+2025-01-15,Gasoil Grado 2,Salta,909.9
+2025-01-15,Nafta Premium,Buenos Aires,995.4
+2025-01-15,Nafta Premium,Córdoba,1010.2
+2025-01-15,Nafta Premium,Mendoza,1019.9
+2025-01-15,Nafta Premium,Santa Fe,1001.6
+2025-01-15,Nafta Premium,Neuquén,1012.0
+2025-01-15,Nafta Premium,Chubut,1020.0
+2025-01-15,Nafta Premium,Tucumán,1011.1
+2025-01-15,Nafta Premium,Salta,1018.2
+2025-02-15,Nafta Super,Buenos Aires,945.6
+2025-02-15,Nafta Super,Córdoba,957.6
+2025-02-15,Nafta Super,Mendoza,967.3
+2025-02-15,Nafta Super,Santa Fe,953.6
+2025-02-15,Nafta Super,Neuquén,962.2
+2025-02-15,Nafta Super,Chubut,972.1
+2025-02-15,Nafta Super,Tucumán,957.1
+2025-02-15,Nafta Super,Salta,962.5
+2025-02-15,Gasoil Grado 2,Buenos Aires,894.5
+2025-02-15,Gasoil Grado 2,Córdoba,906.1
+2025-02-15,Gasoil Grado 2,Mendoza,916.1
+2025-02-15,Gasoil Grado 2,Santa Fe,902.5
+2025-02-15,Gasoil Grado 2,Neuquén,917.1
+2025-02-15,Gasoil Grado 2,Chubut,922.0
+2025-02-15,Gasoil Grado 2,Tucumán,910.2
+2025-02-15,Gasoil Grado 2,Salta,917.0
+2025-02-15,Nafta Premium,Buenos Aires,1002.4
+2025-02-15,Nafta Premium,Córdoba,1014.4
+2025-02-15,Nafta Premium,Mendoza,1020.9
+2025-02-15,Nafta Premium,Santa Fe,1010.4
+2025-02-15,Nafta Premium,Neuquén,1019.0
+2025-02-15,Nafta Premium,Chubut,1027.0
+2025-02-15,Nafta Premium,Tucumán,1012.1
+2025-02-15,Nafta Premium,Salta,1019.2
+2025-03-15,Nafta Super,Buenos Aires,949.1
+2025-03-15,Nafta Super,Córdoba,962.5
+2025-03-15,Nafta Super,Mendoza,972.5
+2025-03-15,Nafta Super,Santa Fe,958.5
+2025-03-15,Nafta Super,Neuquén,964.7
+2025-03-15,Nafta Super,Chubut,975.5
+2025-03-15,Nafta Super,Tucumán,966.2
+2025-03-15,Nafta Super,Salta,967.8
+2025-03-15,Gasoil Grado 2,Buenos Aires,903.6
+2025-03-15,Gasoil Grado 2,Córdoba,915.6
+2025-03-15,Gasoil Grado 2,Mendoza,921.0
+2025-03-15,Gasoil Grado 2,Santa Fe,911.6
+2025-03-15,Gasoil Grado 2,Neuquén,916.0
+2025-03-15,Gasoil Grado 2,Chubut,925.4
+2025-03-15,Gasoil Grado 2,Tucumán,915.1
+2025-03-15,Gasoil Grado 2,Salta,922.2
+2025-03-15,Nafta Premium,Buenos Aires,1005.9
+2025-03-15,Nafta Premium,Córdoba,1017.5
+2025-03-15,Nafta Premium,Mendoza,1026.1
+2025-03-15,Nafta Premium,Santa Fe,1013.9
+2025-03-15,Nafta Premium,Neuquén,1024.2
+2025-03-15,Nafta Premium,Chubut,1026.0
+2025-03-15,Nafta Premium,Tucumán,1017.4
+2025-03-15,Nafta Premium,Salta,1024.1
+2025-04-15,Nafta Super,Buenos Aires,954.4
+2025-04-15,Nafta Super,Córdoba,966.0
+2025-04-15,Nafta Super,Mendoza,977.8
+2025-04-15,Nafta Super,Santa Fe,963.8
+2025-04-15,Nafta Super,Neuquén,972.8
+2025-04-15,Nafta Super,Chubut,980.5
+2025-04-15,Nafta Super,Tucumán,965.5
+2025-04-15,Nafta Super,Salta,972.6
+2025-04-15,Gasoil Grado 2,Buenos Aires,910.9
+2025-04-15,Gasoil Grado 2,Córdoba,922.9
+2025-04-15,Gasoil Grado 2,Mendoza,937.1
+2025-04-15,Gasoil Grado 2,Santa Fe,918.9
+2025-04-15,Gasoil Grado 2,Neuquén,929.2
+2025-04-15,Gasoil Grado 2,Chubut,938.7
+2025-04-15,Gasoil Grado 2,Tucumán,926.6
+2025-04-15,Gasoil Grado 2,Salta,935.5
+2025-04-15,Nafta Premium,Buenos Aires,1008.0
+2025-04-15,Nafta Premium,Córdoba,1019.6
+2025-04-15,Nafta Premium,Mendoza,1031.4
+2025-04-15,Nafta Premium,Santa Fe,1018.8
+2025-04-15,Nafta Premium,Neuquén,1026.3
+2025-04-15,Nafta Premium,Chubut,1034.0
+2025-04-15,Nafta Premium,Tucumán,1020.9
+2025-04-15,Nafta Premium,Salta,1026.2
+2025-05-15,Nafta Super,Buenos Aires,957.6
+2025-05-15,Nafta Super,Córdoba,969.2
+2025-05-15,Nafta Super,Mendoza,979.2
+2025-05-15,Nafta Super,Santa Fe,965.2
+2025-05-15,Nafta Super,Neuquén,974.2
+2025-05-15,Nafta Super,Chubut,981.9
+2025-05-15,Nafta Super,Tucumán,974.7
+2025-05-15,Nafta Super,Salta,974.4
+2025-05-15,Gasoil Grado 2,Buenos Aires,920.0
+2025-05-15,Gasoil Grado 2,Córdoba,928.9
+2025-05-15,Gasoil Grado 2,Mendoza,938.5
+2025-05-15,Gasoil Grado 2,Santa Fe,928.0
+2025-05-15,Gasoil Grado 2,Neuquén,936.6
+2025-05-15,Gasoil Grado 2,Chubut,940.1
+2025-05-15,Gasoil Grado 2,Tucumán,929.8
+2025-05-15,Gasoil Grado 2,Salta,936.9
+2025-05-15,Nafta Premium,Buenos Aires,1011.2
+2025-05-15,Nafta Premium,Córdoba,1022.8
+2025-05-15,Nafta Premium,Mendoza,1032.8
+2025-05-15,Nafta Premium,Santa Fe,1022.0
+2025-05-15,Nafta Premium,Neuquén,1027.8
+2025-05-15,Nafta Premium,Chubut,1035.5
+2025-05-15,Nafta Premium,Tucumán,1030.0
+2025-05-15,Nafta Premium,Salta,1034.0
+2025-06-15,Nafta Super,Buenos Aires,960.7
+2025-06-15,Nafta Super,Córdoba,972.7
+2025-06-15,Nafta Super,Mendoza,982.4
+2025-06-15,Nafta Super,Santa Fe,968.7
+2025-06-15,Nafta Super,Neuquén,977.3
+2025-06-15,Nafta Super,Chubut,987.1
+2025-06-15,Nafta Super,Tucumán,978.1
+2025-06-15,Nafta Super,Salta,983.5
+2025-06-15,Gasoil Grado 2,Buenos Aires,923.5
+2025-06-15,Gasoil Grado 2,Córdoba,935.1
+2025-06-15,Gasoil Grado 2,Mendoza,942.0
+2025-06-15,Gasoil Grado 2,Santa Fe,931.5
+2025-06-15,Gasoil Grado 2,Neuquén,940.1
+2025-06-15,Gasoil Grado 2,Chubut,945.0
+2025-06-15,Gasoil Grado 2,Tucumán,939.2
+2025-06-15,Gasoil Grado 2,Salta,940.4
+2025-06-15,Nafta Premium,Buenos Aires,1014.6
+2025-06-15,Nafta Premium,Córdoba,1026.3
+2025-06-15,Nafta Premium,Mendoza,1036.3
+2025-06-15,Nafta Premium,Santa Fe,1025.5
+2025-06-15,Nafta Premium,Neuquén,1034.1
+2025-06-15,Nafta Premium,Chubut,1039.0
+2025-06-15,Nafta Premium,Tucumán,1033.2
+2025-06-15,Nafta Premium,Salta,1037.1
+2025-07-15,Nafta Super,Buenos Aires,967.7
+2025-07-15,Nafta Super,Córdoba,979.4
+2025-07-15,Nafta Super,Mendoza,985.1
+2025-07-15,Nafta Super,Santa Fe,971.1
+2025-07-15,Nafta Super,Neuquén,986.1
+2025-07-15,Nafta Super,Chubut,987.8
+2025-07-15,Nafta Super,Tucumán,978.9
+2025-07-15,Nafta Super,Salta,986.3
+2025-07-15,Gasoil Grado 2,Buenos Aires,924.2
+2025-07-15,Gasoil Grado 2,Córdoba,939.0
+2025-07-15,Gasoil Grado 2,Mendoza,950.4
+2025-07-15,Gasoil Grado 2,Santa Fe,932.2
+2025-07-15,Gasoil Grado 2,Neuquén,942.6
+2025-07-15,Gasoil Grado 2,Chubut,952.0
+2025-07-15,Gasoil Grado 2,Tucumán,939.9
+2025-07-15,Gasoil Grado 2,Salta,942.8
+2025-07-15,Nafta Premium,Buenos Aires,1021.3
+2025-07-15,Nafta Premium,Córdoba,1032.9
+2025-07-15,Nafta Premium,Mendoza,1044.7
+2025-07-15,Nafta Premium,Santa Fe,1026.5
+2025-07-15,Nafta Premium,Neuquén,1039.6
+2025-07-15,Nafta Premium,Chubut,1047.3
+2025-07-15,Nafta Premium,Tucumán,1034.2
+2025-07-15,Nafta Premium,Salta,1039.9
+2025-08-15,Nafta Super,Buenos Aires,969.8
+2025-08-15,Nafta Super,Córdoba,981.8
+2025-08-15,Nafta Super,Mendoza,993.2
+2025-08-15,Nafta Super,Santa Fe,979.2
+2025-08-15,Nafta Super,Neuquén,988.1
+2025-08-15,Nafta Super,Chubut,996.2
+2025-08-15,Nafta Super,Tucumán,987.2
+2025-08-15,Nafta Super,Salta,988.4
+2025-08-15,Gasoil Grado 2,Buenos Aires,921.4
+2025-08-15,Gasoil Grado 2,Córdoba,933.1
+2025-08-15,Gasoil Grado 2,Mendoza,944.8
+2025-08-15,Gasoil Grado 2,Santa Fe,932.6
+2025-08-15,Gasoil Grado 2,Neuquén,939.8
+2025-08-15,Gasoil Grado 2,Chubut,949.2
+2025-08-15,Gasoil Grado 2,Tucumán,934.3
+2025-08-15,Gasoil Grado 2,Salta,940.0
+2025-08-15,Nafta Premium,Buenos Aires,1023.4
+2025-08-15,Nafta Premium,Córdoba,1035.4
+2025-08-15,Nafta Premium,Mendoza,1046.8
+2025-08-15,Nafta Premium,Santa Fe,1034.5
+2025-08-15,Nafta Premium,Neuquén,1041.8
+2025-08-15,Nafta Premium,Chubut,1049.8
+2025-08-15,Nafta Premium,Tucumán,1039.5
+2025-08-15,Nafta Premium,Salta,1042.0
+2025-09-15,Nafta Super,Buenos Aires,973.0
+2025-09-15,Nafta Super,Córdoba,985.0
+2025-09-15,Nafta Super,Mendoza,993.2
+2025-09-15,Nafta Super,Santa Fe,982.4
+2025-09-15,Nafta Super,Neuquén,991.3
+2025-09-15,Nafta Super,Chubut,999.0
+2025-09-15,Nafta Super,Tucumán,987.2
+2025-09-15,Nafta Super,Salta,991.5
+2025-09-15,Gasoil Grado 2,Buenos Aires,924.6
+2025-09-15,Gasoil Grado 2,Córdoba,936.2
+2025-09-15,Gasoil Grado 2,Mendoza,947.6
+2025-09-15,Gasoil Grado 2,Santa Fe,935.4
+2025-09-15,Gasoil Grado 2,Neuquén,942.6
+2025-09-15,Gasoil Grado 2,Chubut,952.0
+2025-09-15,Gasoil Grado 2,Tucumán,940.3
+2025-09-15,Gasoil Grado 2,Salta,948.8
+2025-09-15,Nafta Premium,Buenos Aires,1026.5
+2025-09-15,Nafta Premium,Córdoba,1038.5
+2025-09-15,Nafta Premium,Mendoza,1050.0
+2025-09-15,Nafta Premium,Santa Fe,1034.5
+2025-09-15,Nafta Premium,Neuquén,1044.9
+2025-09-15,Nafta Premium,Chubut,1052.6
+2025-09-15,Nafta Premium,Tucumán,1042.2
+2025-09-15,Nafta Premium,Salta,1051.1

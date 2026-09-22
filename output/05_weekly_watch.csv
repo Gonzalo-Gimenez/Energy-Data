@@ -1,0 +1,61 @@
+semana,producto,precio_promedio_semana,variacion_pct_wow,estado_control
+2025-09-15,Gasoil Grado 2,940.94,0.43,OK
+2025-09-15,Nafta Premium,1042.54,0.33,OK
+2025-09-15,Nafta Super,987.83,0.24,OK
+2025-08-11,Gasoil Grado 2,936.9,-0.37,OK
+2025-08-11,Nafta Premium,1039.15,0.32,OK
+2025-08-11,Nafta Super,985.49,0.53,OK
+2025-07-14,Gasoil Grado 2,940.39,0.35,OK
+2025-07-14,Nafta Premium,1035.8,0.49,OK
+2025-07-14,Nafta Super,980.3,0.41,OK
+2025-06-09,Gasoil Grado 2,937.1,0.51,OK
+2025-06-09,Nafta Premium,1030.76,0.37,OK
+2025-06-09,Nafta Super,976.31,0.44,OK
+2025-05-12,Gasoil Grado 2,932.35,0.53,OK
+2025-05-12,Nafta Premium,1027.01,0.38,OK
+2025-05-12,Nafta Super,972.05,0.3,OK
+2025-04-14,Gasoil Grado 2,927.48,1.22,OK
+2025-04-14,Nafta Premium,1023.15,0.37,OK
+2025-04-14,Nafta Super,969.18,0.47,OK
+2025-03-10,Gasoil Grado 2,916.31,0.62,OK
+2025-03-10,Nafta Premium,1019.39,0.37,OK
+2025-03-10,Nafta Super,964.6,0.51,OK
+2025-02-10,Gasoil Grado 2,910.69,0.38,OK
+2025-02-10,Nafta Premium,1015.68,0.46,OK
+2025-02-10,Nafta Super,959.75,0.52,OK
+2025-01-13,Gasoil Grado 2,907.28,0.48,OK
+2025-01-13,Nafta Premium,1011.05,0.42,OK
+2025-01-13,Nafta Super,954.76,0.41,OK
+2024-12-09,Gasoil Grado 2,902.95,0.41,OK
+2024-12-09,Nafta Premium,1006.78,0.49,OK
+2024-12-09,Nafta Super,950.88,0.32,OK
+2024-11-11,Gasoil Grado 2,899.24,0.6,OK
+2024-11-11,Nafta Premium,1001.89,0.34,OK
+2024-11-11,Nafta Super,947.81,0.6,OK
+2024-10-14,Gasoil Grado 2,893.91,0.35,OK
+2024-10-14,Nafta Premium,998.46,0.5,OK
+2024-10-14,Nafta Super,942.14,0.35,OK
+2024-09-09,Gasoil Grado 2,890.76,0.41,OK
+2024-09-09,Nafta Premium,993.53,0.36,OK
+2024-09-09,Nafta Super,938.85,0.56,OK
+2024-08-12,Gasoil Grado 2,887.15,-0.3,OK
+2024-08-12,Nafta Premium,990.0,0.49,OK
+2024-08-12,Nafta Super,933.6,0.42,OK
+2024-07-15,Gasoil Grado 2,889.79,0.38,OK
+2024-07-15,Nafta Premium,985.21,0.42,OK
+2024-07-15,Nafta Super,929.71,0.37,OK
+2024-06-10,Gasoil Grado 2,886.41,0.6,OK
+2024-06-10,Nafta Premium,981.06,0.43,OK
+2024-06-10,Nafta Super,926.31,0.37,OK
+2024-05-13,Gasoil Grado 2,881.16,0.36,OK
+2024-05-13,Nafta Premium,976.86,0.46,OK
+2024-05-13,Nafta Super,922.88,0.51,OK
+2024-04-15,Gasoil Grado 2,878.04,1.42,OK
+2024-04-15,Nafta Premium,972.44,0.39,OK
+2024-04-15,Nafta Super,918.19,0.42,OK
+2024-03-11,Gasoil Grado 2,865.74,0.55,OK
+2024-03-11,Nafta Premium,968.64,0.49,OK
+2024-03-11,Nafta Super,914.36,0.45,OK
+2024-02-12,Gasoil Grado 2,861.03,0.45,OK
+2024-02-12,Nafta Premium,963.95,0.33,OK
+2024-02-12,Nafta Super,910.26,0.39,OK

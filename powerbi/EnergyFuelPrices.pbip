@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "artifacts": [
+    {
+      "report": {
+        "path": "EnergyFuelPrices.Report"
+      }
+    },
+    {
+      "dataset": {
+        "path": "EnergyFuelPrices.SemanticModel"
+      }
+    }
+  ],
+  "settings": {
+    "enableAutoRecovery": true
+  }
+}

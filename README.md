@@ -1,23 +1,26 @@
 # Argentina Energy Analytics (Data Analyst)
 
-Exploratory analysis on **public** Argentine energy and fuel-price data. No proprietary YPF or field telemetry — only reproducible questions a sector analyst would ask with open datasets.
+Exploratory analysis on **public** Argentine fuel-price data: BigQuery warehouse, versioned SQL, Power BI desk, and a one-page analyst memo. No proprietary refinery or field telemetry.
+
+![Overview dashboard](docs/powerbi-overview.png)
 
 ## Business questions
 
-| # | Question | Where answered |
-|---|----------|----------------|
+| # | Question | SQL |
+|---|----------|-----|
 | 1 | How did national average fuel prices move month over month? | `sql/01_price_trends.sql` |
 | 2 | Which fuel type shows the widest price spread across provinces? | `sql/02_price_dispersion.sql` |
 | 3 | Is there a seasonal pattern in diesel vs gasoline? | `sql/03_seasonality.sql` |
 | 4 | Which regions concentrate the highest posted prices? | `sql/04_regional_rank.sql` |
-| 5 | What would we monitor weekly if this were an operations desk? | `memo/ANALYST_MEMO.md` |
+| 5 | What would we monitor weekly on an operations desk? | `sql/05_weekly_watch.sql` |
 
 ## Stack
 
-- Python 3.12 + pandas (ingest / sanity checks)
-- DuckDB (local analytic warehouse)
-- SQL (versioned queries)
-- CSV derived from public fuel-price series (documented in `data/README.md`)
+- Python 3.12 + pandas (CSV validation)
+- **Google BigQuery** (`energy_ar.fuel_prices`)
+- SQL (Standard SQL, `{{TABLE}}` placeholder for the fully qualified table)
+- **Power BI** (`powerbi/EnergyFuelPrices.pbip`, CSV import; BigQuery connector in production)
+- Analyst memo: `memo/ANALYST_MEMO.md`
 
 ## Quick start
 
@@ -25,24 +28,32 @@ Exploratory analysis on **public** Argentine energy and fuel-price data. No prop
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
-python scripts/build_duckdb.py
-duckdb data/energy.duckdb -c ".read sql/01_price_trends.sql"
+python scripts/generate_sample_csv.py   # optional: regenerate demo CSV
+python scripts/validate_csv.py
 ```
 
-Or run all packaged queries:
+### BigQuery (optional)
 
 ```powershell
+$env:GCP_PROJECT = "your-gcp-project"
+gcloud auth application-default login
+python scripts/load_bigquery.py
 python scripts/run_all_sql.py
+```
+
+Without GCP credentials, `run_all_sql.py` still writes `output/*.csv` using a local DuckDB engine with the same SQL logic.
+
+### Power BI
+
+Open `powerbi/EnergyFuelPrices.pbip` in Power BI Desktop. See `powerbi/README.md`. To refresh README screenshots:
+
+```powershell
+python scripts/export_powerbi_png.py
 ```
 
 ## Data limits
 
-- Demo file `data/fuel_prices_public_sample.csv` is a **curated subset** shaped like Secretaría de Energía / Surtidor reports (dates, product, province, ARS/liter). Replace with your own export from [datos.gob.ar](https://datos.gob.ar) following `data/README.md`.
-- Do not infer internal margins or production — this repo stops at public posted prices.
-
-## Analyst memo
-
-One-page narrative for a hiring manager: `memo/ANALYST_MEMO.md`.
+`data/fuel_prices_public_sample.csv` is a **curated demo** shaped like public surtidor exports. Replace with your own [datos.gob.ar](https://datos.gob.ar) export (see `data/README.md`). Do not infer refinery margin or real consumption from price alone.
 
 ## License
 
