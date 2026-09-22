@@ -1,9 +1,9 @@
-"""Sanity checks on the public sample CSV (used before BigQuery load)."""
+"""Sanity checks on the public sample CSV (used before warehouse load)."""
 from __future__ import annotations
 
 import pandas as pd
 
-from bq_config import CSV_PATH
+from warehouse import CSV_PATH
 
 REQUIRED = {"fecha", "producto", "provincia", "precio_ars_litro"}
 

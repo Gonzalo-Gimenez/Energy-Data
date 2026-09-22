@@ -1,11 +1,11 @@
 -- Weekly national basket vs prior week (operations desk watch)
 WITH weekly AS (
   SELECT
-    DATE_TRUNC(fecha, WEEK(MONDAY)) AS semana,
+    date_trunc('week', fecha)::date AS semana,
     producto,
     AVG(precio_ars_litro) AS precio_prom
-  FROM {{TABLE}}
-  GROUP BY semana, producto
+  FROM fuel_prices
+  GROUP BY 1, 2
 ),
 lagged AS (
   SELECT

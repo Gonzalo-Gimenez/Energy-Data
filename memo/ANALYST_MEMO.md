@@ -2,7 +2,7 @@
 
 **Audience:** energy retail / downstream analyst hiring manager  
 **Data:** public posted fuel prices (demo CSV; replace with datos.gob.ar export)  
-**Warehouse:** Google BigQuery `energy_ar.fuel_prices`  
+**Warehouse:** PostgreSQL `fuel_prices` (Docker, `localhost:5435`) — same grain as the CSV in GitHub  
 **Desk:** Power BI report in `powerbi/EnergyFuelPrices.pbip`
 
 ## Snapshot (demo sample, Sep 2025)
@@ -25,4 +25,4 @@
 
 ## Next step with real data
 
-Ingest the official CSV/API into `prices_raw`, snapshot daily into BigQuery, point Power BI at BigQuery, and keep the five SQL files as the regression suite for schema changes.
+Ingest the official CSV/API into `prices_raw`, snapshot into the warehouse table, point Power BI at Postgres (or BigQuery at work), and keep the five SQL files as the regression suite for schema changes.

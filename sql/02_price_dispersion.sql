@@ -4,6 +4,6 @@ SELECT
   ROUND(MIN(precio_ars_litro), 2) AS min_provincia,
   ROUND(MAX(precio_ars_litro), 2) AS max_provincia,
   ROUND(MAX(precio_ars_litro) - MIN(precio_ars_litro), 2) AS spread_ars
-FROM {{TABLE}}
+FROM fuel_prices
 GROUP BY producto
 ORDER BY spread_ars DESC;

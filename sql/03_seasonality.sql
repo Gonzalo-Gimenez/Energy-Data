@@ -2,10 +2,10 @@
 WITH q AS (
   SELECT
     producto,
-    DATE_TRUNC(fecha, QUARTER) AS trimestre,
+    date_trunc('quarter', fecha)::date AS trimestre,
     AVG(precio_ars_litro) AS precio_prom
-  FROM {{TABLE}}
-  GROUP BY producto, trimestre
+  FROM fuel_prices
+  GROUP BY 1, 2
 ),
 lagged AS (
   SELECT

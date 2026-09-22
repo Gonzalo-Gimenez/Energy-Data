@@ -1,8 +1,8 @@
 -- Monthly average posted price by product (national)
 SELECT
-  DATE_TRUNC(fecha, MONTH) AS mes,
+  date_trunc('month', fecha)::date AS mes,
   producto,
   ROUND(AVG(precio_ars_litro), 2) AS precio_promedio_ars
-FROM {{TABLE}}
-GROUP BY mes, producto
-ORDER BY mes, producto;
+FROM fuel_prices
+GROUP BY 1, 2
+ORDER BY 1, 2;

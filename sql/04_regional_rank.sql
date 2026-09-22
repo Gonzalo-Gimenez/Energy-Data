@@ -1,12 +1,12 @@
 -- Top provinces by latest-month average price per product
 WITH latest AS (
-  SELECT MAX(fecha) AS max_fecha FROM {{TABLE}}
+  SELECT MAX(fecha) AS max_fecha FROM fuel_prices
 ),
 last_month AS (
   SELECT f.*
-  FROM {{TABLE}} AS f
+  FROM fuel_prices AS f
   CROSS JOIN latest AS l
-  WHERE DATE_TRUNC(f.fecha, MONTH) = DATE_TRUNC(l.max_fecha, MONTH)
+  WHERE date_trunc('month', f.fecha) = date_trunc('month', l.max_fecha)
 )
 SELECT
   producto,

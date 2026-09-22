@@ -1,16 +1,13 @@
 from __future__ import annotations
 
-import os
 import sys
 from pathlib import Path
-
-import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from bq_config import SQL_DIR, substitute_table
 from validate_csv import validate_csv
+from warehouse import query_files
 
 
 def test_csv_schema_and_volume():
@@ -22,26 +19,33 @@ def test_csv_schema_and_volume():
 
 
 def test_sql_files_present_and_non_empty():
-    names = [f"0{i}_" for i in range(1, 6)] + ["05_"]
-    files = sorted(SQL_DIR.glob("*.sql"))
+    files = query_files()
     assert len(files) == 5
     for path in files:
         body = path.read_text(encoding="utf-8")
-        assert "{{TABLE}}" in body
+        assert "fuel_prices" in body
         assert len(body.strip()) > 40
 
 
-@pytest.mark.skipif(
-    not (os.environ.get("GCP_PROJECT") or os.environ.get("GOOGLE_CLOUD_PROJECT")),
-    reason="BigQuery integration test needs GCP_PROJECT",
-)
-def test_bigquery_queries_return_rows():
-    from google.cloud import bigquery
+def test_queries_return_rows_locally():
+    import duckdb
 
-    from bq_config import gcp_project
+    from warehouse import CSV_PATH
 
-    client = bigquery.Client(project=gcp_project())
-    for path in sorted(SQL_DIR.glob("*.sql")):
-        sql = substitute_table(path.read_text(encoding="utf-8"))
-        df = client.query(sql).to_dataframe()
+    con = duckdb.connect()
+    con.execute(
+        """
+        CREATE TABLE fuel_prices AS
+        SELECT
+            CAST(fecha AS DATE) AS fecha,
+            producto,
+            provincia,
+            CAST(precio_ars_litro AS DOUBLE) AS precio_ars_litro
+        FROM read_csv_auto(?)
+        """,
+        [str(CSV_PATH)],
+    )
+    for path in query_files():
+        df = con.sql(path.read_text(encoding="utf-8")).fetchdf()
         assert len(df) > 0
+    con.close()

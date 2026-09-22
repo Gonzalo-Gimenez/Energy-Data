@@ -16,13 +16,9 @@ Use open Argentine datasets, for example:
 
 `fuel_prices_public_sample.csv` is **demo data** (~500 rows, Jan 2024 – Sep 2025). Regenerate with `python scripts/generate_sample_csv.py`.
 
-## BigQuery load
-
-After replacing the CSV:
+This CSV **is** the public database in GitHub. Docker Compose loads it into PostgreSQL (`fuel_prices`) on port 5435.
 
 ```powershell
-$env:GCP_PROJECT = "your-project"
-python scripts/load_bigquery.py
+docker compose up -d
+python scripts/load_warehouse.py
 ```
-
-Target table: `energy_ar.fuel_prices` (dataset created if missing).
