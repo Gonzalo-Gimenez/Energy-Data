@@ -3,11 +3,14 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
+import psycopg2
+import pytest
+
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from validate_csv import validate_csv
-from warehouse import query_files
+from warehouse import DATABASE_URL, query_files
 
 
 def test_csv_schema_and_volume():
@@ -27,25 +30,23 @@ def test_sql_files_present_and_non_empty():
         assert len(body.strip()) > 40
 
 
-def test_queries_return_rows_locally():
-    import duckdb
+def _postgres_available() -> bool:
+    try:
+        conn = psycopg2.connect(DATABASE_URL, connect_timeout=3)
+        conn.close()
+        return True
+    except Exception:
+        return False
 
-    from warehouse import CSV_PATH
 
-    con = duckdb.connect()
-    con.execute(
-        """
-        CREATE TABLE fuel_prices AS
-        SELECT
-            CAST(fecha AS DATE) AS fecha,
-            producto,
-            provincia,
-            CAST(precio_ars_litro AS DOUBLE) AS precio_ars_litro
-        FROM read_csv_auto(?)
-        """,
-        [str(CSV_PATH)],
-    )
-    for path in query_files():
-        df = con.sql(path.read_text(encoding="utf-8")).fetchdf()
-        assert len(df) > 0
-    con.close()
+@pytest.mark.skipif(not _postgres_available(), reason="docker compose warehouse not running")
+def test_queries_return_rows_from_warehouse():
+    conn = psycopg2.connect(DATABASE_URL)
+    try:
+        for path in query_files():
+            with conn.cursor() as cur:
+                cur.execute(path.read_text(encoding="utf-8"))
+                rows = cur.fetchall()
+            assert len(rows) > 0
+    finally:
+        conn.close()

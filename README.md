@@ -6,20 +6,21 @@ Exploratory analysis on **public** Argentine fuel-price data: a local PostgreSQL
 
 ## What is “the database” in this repo
 
-Companies do **not** keep the warehouse as an Excel on a laptop. They load tables into a SQL engine (BigQuery, Snowflake, or Postgres) and analysts query that.
+In a company the warehouse is a SQL engine (BigQuery, Snowflake, or Postgres). Analysts connect with a SQL client (DBeaver, DataGrip) or Power BI — they do not query the CSV by hand.
 
-Here the same job is **simulated locally** so anyone can clone and run it:
+This exercise **simulates that warehouse with PostgreSQL in Docker**. Same job as BigQuery; local, free, and openable in DBeaver.
 
-| In GitHub (source of truth) | At demo time |
-|-----------------------------|--------------|
-| `data/fuel_prices_public_sample.csv` + `sql/00_schema.sql` | `docker compose up -d` → Postgres on `:5435`, table `fuel_prices` |
+| On GitHub (source of truth) | On your machine (demo) |
+|-----------------------------|-------------------------|
+| `data/fuel_prices_public_sample.csv` + `sql/*.sql` | `docker compose up -d` → Postgres `:5435` → table `fuel_prices` |
 
-We do **not** commit the Postgres volume (binary, machine-specific). The CSV + schema **are** the public database.
+The Postgres data directory is **not** committed (binary). The CSV and the SQL files **are** the public database.
 
 ```
-CSV (GitHub)  →  PostgreSQL warehouse (Docker :5435)  →  sql/01–05  →  output/
-                          ↘
-                       Power BI (imports the same CSV)
+CSV (GitHub)
+    → PostgreSQL in Docker (warehouse, like BigQuery)
+    → DBeaver / sql/01–05
+    → Power BI (same CSV)
 ```
 
 ## Business questions
@@ -35,38 +36,40 @@ CSV (GitHub)  →  PostgreSQL warehouse (Docker :5435)  →  sql/01–05  →  o
 ## Stack
 
 - Python 3.12 + pandas (CSV validation)
-- **PostgreSQL 15** in Docker (`energy.fuel_prices`, port **5435**)
-- SQL (Postgres, one file per business question)
-- **Power BI** (`powerbi/EnergyFuelPrices.pbip`, CSV import; same grain as the warehouse table)
+- **PostgreSQL 15** in Docker (`energy` / table `fuel_prices`, port **5435**)
+- SQL files in `sql/` (open them in DBeaver)
+- **Power BI** (`powerbi/EnergyFuelPrices.pbip`)
 - Analyst memo: `memo/ANALYST_MEMO.md`
 
 ## Quick start
 
 ```powershell
+cd Proyectos\energy-analytics-ar
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
-python scripts/validate_csv.py
 docker compose up -d
-python scripts/load_warehouse.py   # if the volume already existed without data
+python scripts/load_warehouse.py
 python scripts/run_all_sql.py
 ```
 
-First `docker compose up` runs `sql/00_schema.sql` and loads the CSV. If Postgres is not running, `run_all_sql.py` still writes `output/*.csv` with DuckDB (same SQL).
+## DBeaver (SQL client)
 
-Query the warehouse:
+New connection → PostgreSQL:
 
-```powershell
-docker compose exec warehouse psql -U energy -d energy -c "SELECT producto, COUNT(*) FROM fuel_prices GROUP BY 1;"
-```
+| Field | Value |
+|-------|--------|
+| Host | `localhost` |
+| Port | `5435` |
+| Database | `energy` |
+| Username | `energy` |
+| Password | `energy` |
 
-### Power BI
+Then open `sql/01_price_trends.sql` (and the rest) against that connection. DBeaver is the desktop SQL IDE; it is **not** DuckDB. DuckDB is not part of this project.
+
+## Power BI
 
 Open `powerbi/EnergyFuelPrices.pbip` in Power BI Desktop. See `powerbi/README.md`.
-
-```powershell
-python scripts/export_powerbi_png.py
-```
 
 ## Data limits
 
