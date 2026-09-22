@@ -1,24 +1,22 @@
 # Power BI report (Energy Fuel Prices)
 
-Open `EnergyFuelPrices.pbip` in **Power BI Desktop** (October 2024+ with PBIP support).
+Open `EnergyFuelPrices.pbip` in **Power BI Desktop**.
+
+The PNGs in `docs/` are a **light office-style stand-in** (matplotlib) so GitHub and the portfolio have a cover. They are not screenshots of Desktop. Build the two pages here, then **File → Export → PNG** (or Snipping Tool) and replace `docs/powerbi-overview.png` / `docs/powerbi-provinces.png`.
 
 ## Data source
 
-The semantic model imports `../data/fuel_prices_public_sample.csv` — the same grain as DuckDB `fuel_prices`. In a company you would point Power BI at the warehouse instead of the file.
+The semantic model imports `data/fuel_prices_public_sample.csv` (same grain as DuckDB `fuel_prices`). If Desktop asks to locate the file, point it at that CSV. In a company you would use the warehouse connector instead.
 
-## DAX measures (in model)
+## DAX measures (in the model)
 
 - `Precio_promedio` — national average ARS/liter
 - `Spread_max_min` — max minus min in the current filter context
-- `Ultimo_mes` — average price in the latest month of the dataset
+- `Ultimo_mes` — average price in the latest month
 
-## Report pages (build in Desktop)
+## Pages to build in Desktop (light theme)
 
-1. **Overview** — KPI cards (Nafta Super / Gasoil / Premium averages), line chart of monthly mean by product.
-2. **Provinces** — bar chart of last-month average by province, slicer on `producto`.
+View → Themes → **Office** or **Executive** (white canvas).
 
-Export PNGs to `docs/powerbi-overview.png` and `docs/powerbi-provinces.png` after layout, or run:
-
-```powershell
-.\.venv\Scripts\python scripts\export_powerbi_png.py
-```
+1. **Overview** — three cards (Nafta Super / Gasoil / Premium using `Precio_promedio` + slicer/filter on `producto`) and a line chart of monthly average.
+2. **Provinces** — bar chart of last-month average by `provincia`, slicer on `producto`.

@@ -57,7 +57,7 @@ table fuel_prices
 		source =
 				let
 				    Source = Csv.Document(
-				        File.Contents("../../../data/fuel_prices_public_sample.csv"),
+				        File.Contents("../../data/fuel_prices_public_sample.csv"),
 				        [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.None]
 				    ),
 				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
