@@ -4,7 +4,7 @@ Open `EnergyFuelPrices.pbip` in **Power BI Desktop** (October 2024+ with PBIP su
 
 ## Data source
 
-The semantic model imports `../data/fuel_prices_public_sample.csv` — the same grain as PostgreSQL `fuel_prices`. That is the desk workflow for this exercise (no cloud login). In a company you would point Power BI at the warehouse (Postgres / BigQuery) instead of the file.
+The semantic model imports `../data/fuel_prices_public_sample.csv` — the same grain as DuckDB `fuel_prices`. In a company you would point Power BI at the warehouse instead of the file.
 
 ## DAX measures (in model)
 

@@ -1,27 +1,30 @@
 # Argentina Energy Analytics (Data Analyst)
 
-Exploratory analysis on **public** Argentine fuel-price data: a local PostgreSQL warehouse (Docker), versioned SQL, a Power BI desk, and a one-page analyst memo. No cloud billing, no proprietary refinery telemetry.
+Exploratory analysis on **public** Argentine fuel-price data: **DuckDB inside Python**, versioned SQL, Power BI, and a one-page memo. No cloud billing.
 
 ![Overview dashboard](docs/powerbi-overview.png)
 
-## What is “the database” in this repo
+## How the warehouse works here
 
-In a company the warehouse is a SQL engine (BigQuery, Snowflake, or Postgres). Analysts connect with a SQL client (DBeaver, DataGrip) or Power BI — they do not query the CSV by hand.
+DuckDB is a SQL engine you install **in the project** (`pip install duckdb`). It is not DBeaver and not a program you open on the desktop. Python loads the CSV, DuckDB runs the `.sql` files, results go to `output/`.
 
-This exercise **simulates that warehouse with PostgreSQL in Docker**. Same job as BigQuery; local, free, and openable in DBeaver.
-
-| On GitHub (source of truth) | On your machine (demo) |
-|-----------------------------|-------------------------|
-| `data/fuel_prices_public_sample.csv` + `sql/*.sql` | `docker compose up -d` → Postgres `:5435` → table `fuel_prices` |
-
-The Postgres data directory is **not** committed (binary). The CSV and the SQL files **are** the public database.
+That is the analyst loop (same idea as querying BigQuery, without Google):
 
 ```
 CSV (GitHub)
-    → PostgreSQL in Docker (warehouse, like BigQuery)
-    → DBeaver / sql/01–05
+    → DuckDB (pip, in this repo's venv)
+    → sql/01–05
+    → output/*.csv
     → Power BI (same CSV)
 ```
+
+| On GitHub | On your machine |
+|-----------|-----------------|
+| `data/fuel_prices_public_sample.csv` + `sql/*.sql` | `pip install -r requirements.txt` then `python scripts/build_duckdb.py` |
+
+`data/energy.duckdb` is built locally (gitignored). Recreate it anytime from the CSV.
+
+PostgreSQL in Docker is **optional** (same table, port 5435) if you want a server-shaped warehouse. Daily work is DuckDB.
 
 ## Business questions
 
@@ -35,11 +38,11 @@ CSV (GitHub)
 
 ## Stack
 
-- Python 3.12 + pandas (CSV validation)
-- **PostgreSQL 15** in Docker (`energy` / table `fuel_prices`, port **5435**)
-- SQL files in `sql/` (open them in DBeaver)
+- Python 3.12 + pandas (CSV checks)
+- **DuckDB** (`pip install duckdb` via `requirements.txt`)
+- SQL in `sql/`
 - **Power BI** (`powerbi/EnergyFuelPrices.pbip`)
-- Analyst memo: `memo/ANALYST_MEMO.md`
+- Memo: `memo/ANALYST_MEMO.md`
 
 ## Quick start
 
@@ -48,32 +51,35 @@ cd Proyectos\energy-analytics-ar
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
-docker compose up -d
-python scripts/load_warehouse.py
+python scripts/build_duckdb.py
 python scripts/run_all_sql.py
+python -m pytest -q
 ```
 
-## DBeaver (SQL client)
+Run one question from Python:
 
-New connection → PostgreSQL:
+```python
+import duckdb
+con = duckdb.connect("data/energy.duckdb")
+print(con.sql(open("sql/01_price_trends.sql", encoding="utf-8").read()))
+```
 
-| Field | Value |
-|-------|--------|
-| Host | `localhost` |
-| Port | `5435` |
-| Database | `energy` |
-| Username | `energy` |
-| Password | `energy` |
+## Optional: Postgres in Docker
 
-Then open `sql/01_price_trends.sql` (and the rest) against that connection. DBeaver is the desktop SQL IDE; it is **not** DuckDB. DuckDB is not part of this project.
+```powershell
+docker compose up -d
+python scripts/load_warehouse.py
+```
+
+Same schema (`fuel_prices`). Not required for analysis.
 
 ## Power BI
 
-Open `powerbi/EnergyFuelPrices.pbip` in Power BI Desktop. See `powerbi/README.md`.
+Open `powerbi/EnergyFuelPrices.pbip` in Power BI Desktop.
 
 ## Data limits
 
-`data/fuel_prices_public_sample.csv` is a **curated demo** shaped like public surtidor exports. Replace with your own [datos.gob.ar](https://datos.gob.ar) export (see `data/README.md`). Do not infer refinery margin or real consumption from price alone.
+`data/fuel_prices_public_sample.csv` is a **curated demo**. Replace with a [datos.gob.ar](https://datos.gob.ar) export (see `data/README.md`). Do not infer refinery margin or consumption from price alone.
 
 ## License
 

@@ -1,4 +1,4 @@
-"""Run versioned SQL against PostgreSQL and write results to output/."""
+"""Run versioned SQL with DuckDB (pip) and write results to output/."""
 from __future__ import annotations
 
 import sys
@@ -7,36 +7,42 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from warehouse import DATABASE_URL, OUTPUT_DIR, query_files
+import duckdb
+
+from warehouse import CSV_PATH, DUCKDB_PATH, OUTPUT_DIR, query_files
+
+
+def connect() -> duckdb.DuckDBPyConnection:
+    if DUCKDB_PATH.exists():
+        return duckdb.connect(str(DUCKDB_PATH))
+    con = duckdb.connect()
+    con.execute(
+        """
+        CREATE TABLE fuel_prices AS
+        SELECT
+            CAST(fecha AS DATE) AS fecha,
+            producto,
+            provincia,
+            CAST(precio_ars_litro AS DOUBLE) AS precio_ars_litro
+        FROM read_csv_auto(?)
+        """,
+        [str(CSV_PATH)],
+    )
+    return con
 
 
 def main() -> None:
-    import pandas as pd
-    import psycopg2
-
+    con = connect()
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     try:
-        conn = psycopg2.connect(DATABASE_URL, connect_timeout=5)
-    except Exception as exc:
-        raise SystemExit(
-            "PostgreSQL is not running on localhost:5435.\n"
-            "Start it with: docker compose up -d\n"
-            f"Detail: {exc}"
-        ) from exc
-
-    try:
-        OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
         for path in query_files():
-            sql = path.read_text(encoding="utf-8")
-            with conn.cursor() as cur:
-                cur.execute(sql)
-                cols = [d[0] for d in cur.description]
-                df = pd.DataFrame(cur.fetchall(), columns=cols)
+            df = con.sql(path.read_text(encoding="utf-8")).fetchdf()
             out = OUTPUT_DIR / f"{path.stem}.csv"
             df.to_csv(out, index=False)
             print(f"\n=== {path.name} -> {out.name} ({len(df)} rows) ===\n")
             print(df.head(12).to_string(index=False))
     finally:
-        conn.close()
+        con.close()
 
 
 if __name__ == "__main__":

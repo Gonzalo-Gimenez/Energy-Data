@@ -1,4 +1,4 @@
-"""Local warehouse paths and connection (PostgreSQL in Docker)."""
+"""Project paths. Analyst engine is DuckDB; Postgres Docker is optional."""
 from __future__ import annotations
 
 import os
@@ -6,6 +6,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 CSV_PATH = ROOT / "data" / "fuel_prices_public_sample.csv"
+DUCKDB_PATH = ROOT / "data" / "energy.duckdb"
 SQL_DIR = ROOT / "sql"
 OUTPUT_DIR = ROOT / "output"
 SCHEMA_SQL = SQL_DIR / "00_schema.sql"
